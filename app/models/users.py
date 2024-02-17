@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-import uuid
-from datetime import datetime
-from sqlalchemy import Column, String, DateTime
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, String, ForeignKey, Integer
+from sqlalchemy.orm import relationship
+from models import Base
 
-Class User(Base):
+class User(Base):
     """ User model for storing user data """
     __tablename__ = 'users'
     first_name = Column(String(128), nullable=True)
@@ -12,12 +11,11 @@ Class User(Base):
     hashed_password = Column(String(128), nullable=False)
     email = Column(String(255), nullable=False)
     user_gender = Column(String(128), nullable=True)
-    user_phone = Column(String(20), nullable=True
+    user_phone = Column(String(20), nullable=True)
     user_address = Column(String(255), nullable=True)
-    city_id = realationship("City", back_populates="users")
-
+    city_id = Column(Integer, ForeignKey('cities.id'))
+    city = relationship("City", back_populates="user")
+    worker = relationship("Worker", back_populates="user")
     def __init__(self, *args, **kwargs):
-        """ Initialize the user model """
+        """ Initialize the User model """
         super().__init__(*args, **kwargs)
-        self.id = str(uuid.uuid4())
-        self.created_at = self.updated_at = datetime.now()
