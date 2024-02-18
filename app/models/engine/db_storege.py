@@ -3,7 +3,7 @@
 Contains the class SBStorage
 """
 
-from models.base_model import Base
+from models.base_model import Base as BaseModel
 from models.users import User
 from models.categories import Category
 from models.cities import City
@@ -14,6 +14,7 @@ from models.workers import Worker
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 from os import getenv
 
 classes = {
@@ -30,6 +31,7 @@ class SBStorage:
     """Interacts with the MySQL database"""
     __engine = None
     __session = None
+    Base = declarative_base()
 
     def __init__(self):
         """Instantiate a SBStorage object"""
@@ -69,10 +71,11 @@ class SBStorage:
 
     def reload(self):
         """Reloads data from the database"""
-        Base.metadata.create_all(self.__engine)
+        self.Base.metadata.create_all(self.__engine)
         sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sess_factory)
         self.__session = Session
+
 
     def close(self):
         """Call remove() method on the private session attribute"""

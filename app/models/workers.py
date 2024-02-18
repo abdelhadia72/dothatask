@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-from sqlalchemy import Base, Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-
+from models import Base
 
 class Worker(Base):
     """ Worker model for storing worker data """
