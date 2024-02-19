@@ -1,17 +1,23 @@
 #!/usr/bin/env python3
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from models import Base
+from .base_model import Base
 
 class Worker(Base):
-    """ Worker model for storing worker data """
-    __tablename__ = 'workers'
-    image_url = Column(String(255))
-    status = Column(String(128), nullable=False)
-    user_id = Column(Integer, ForeignKey('users.id'))
-    user = relationship("User", back_populates="worker")
-    tasks = relationship("Task", back_populates="worker_task")
+    __tablename__ = 'Workers'
 
-    def __init__(self, *args, **kwargs):
-        """ Initialize the worker model """
-        super().__init__(*args, **kwargs)
+    worker_id = Column(Integer, primary_key=True, index=True)
+    worker_name = Column(String, index=True)
+    worker_email = Column(String, index=True)
+    worker_phone = Column(String)
+    city_id = Column(Integer)
+    
+    
+    def to_dict(self):
+        return {
+            'worker_id': self.worker_id,
+            'worker_name': self.worker_name,
+            'worker_email': self.worker_email,
+            'worker_phone': self.worker_phone,
+            'city_id': self.city_id
+        }

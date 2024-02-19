@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 from sqlalchemy import Column, String, ForeignKey, Integer
 from sqlalchemy.orm import relationship
-from models import Base
+from ..models import Base
+
 
 class User(Base):
     """ User model for storing user data """
