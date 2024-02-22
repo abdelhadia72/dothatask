@@ -1,1 +1,7 @@
-this folder for front-end files
+# React + Vite
+
+Run the server
+
+```bash
+    npm run dev
+```
