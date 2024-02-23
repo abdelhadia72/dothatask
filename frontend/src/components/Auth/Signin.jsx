@@ -8,9 +8,9 @@ function Signin() {
     return (
         <div className="w-full flex  relative bg-neutral-100">
             <Logo />
-            <div className="mx-auto mt-[173px] inline-flex flex-col items-center gap-[40px] md:p-[35px] p-[10px] relative bg-white">
+            <div className="mx-auto mt-[173px] inline-flex flex-col items-center gap-[40px] sm:p-[35px] p-[10px] relative bg-white">
                 <div className="text-stone-950 text-5xl font-bold mb-[40px]">Sign in</div>
-                <div className="flex-col justify-center items-center gap-10 flex">
+                <form className="flex-col justify-center items-center gap-10 flex">
                     <div className="flex-col justify-start items-start gap-[15px] flex">
                         <Inputs placeholder={"email adress"} inpType={"text"} />
                         <Inputs placeholder={"Password"} inpType={"password"} />
@@ -38,7 +38,7 @@ function Signin() {
                         <img className="w-[38px] h-[38px]" src={google_logo} />
                         <div className="text-neutral-600 text-xl font-medium">Sign in with google</div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )
