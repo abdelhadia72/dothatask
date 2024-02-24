@@ -1,26 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import google_logo from '../../assets/google_logo.png';
 import { useForm } from 'react-hook-form';
 import Errors from '../areas/Errors';
 
 function Signin() {
+    const [emailErr, setemailErr] = useState('')
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors },
     } = useForm()
-    const onsumbit = (e) => {
-        alert(e.email + " " + e.password)
+    const onSubmit = (e) => {
         console.log(e)
+        e.email !== 'othman@com' ? setemailErr("email is not valid") : setemailErr('') 
     }
+
     return (
-        <div className="w-full flex  relative bg-neutral-100">
+        <div className="w-full flex relative bg-neutral-100">
             <div className="custom-dynamic-style">
                 <div className="text-stone-950 md:text-5xl text-xl font-bold md:mb-[40px]">Sign in</div>
                 <div className="flex-col justify-center items-center md:gap-10 gap-5 flex">
-                    <form onSubmit={handleSubmit(onsumbit)} className="flex-col justify-center items-center md:gap-10 gap-5 flex" action="" >
+                    <form onSubmit={handleSubmit(onSubmit)} className="flex-col justify-center items-center md:gap-10 gap-5 flex" action="" >
                         <div className="flex-col justify-start items-start gap-[15px] flex">
                             <input
                                 type="email"
@@ -28,14 +30,13 @@ function Signin() {
                                 {...register('email', { required: true })}
                                 className="custom-input-style"
                             />
-                            {errors.email && <Errors content={"This field is required"} />}
+                            {emailErr ? <Errors content={emailErr} /> : <></>}
                             <input
                                 type="password"
                                 placeholder="Password"
                                 {...register('password', { required: true })}
                                 className="custom-input-style"
                             />
-                            {errors.password && <Errors content="This field is required" />}
                         </div>
                         <div className="justify-start items-center md:gap-[195px] lg:gap-[238px] gap-4 inline-flex mb-[-40px]">
                             <div className="justify-start items-center md:gap-[9px] gap-1 flex">
@@ -49,10 +50,10 @@ function Signin() {
                             <button type='submit' className="text-white md:text-2xl text-xl font-medium font-['Ubuntu']">login</button>
                         </div>
                     </form>
-                    <div className="justify-start items-start md:gap-1 gap-0 inline-flex">
+                    <div className="justify-center items-center md:gap-1 gap-1 inline-flex  lg:w-[542px] md:w-[480px] w-[225px] text-center">
                         <div className="text-neutral-600 text-xl font-medium">
                             Doesn't have an account yet?
-                            <Link to='/signup' className="text-center text-emerald-600 md:text-lg text-sm font-normal md:ml-[5px]">Sign up</Link>
+                            <Link to='/signup' className="text-center text-emerald-600 md:text-lg text-sm font-normal ml-[5px]">Sign up</Link>
                         </div>
                     </div>
                     <div className="justify-start items-center gap-[9px] inline-flex">
