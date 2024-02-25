@@ -4,6 +4,7 @@ import Routers from "./components/routes/Routes";
 import ForgotPassword from "./components/Auth/ForgotPassword";
 import Emailsent from "./components/pages/Emailsent";
 import Homepage from "./components/pages/Homepage";
+import SearchCategorie from "./components/areas/SearchCategorie";
 
 export const App = () => {
   const [Auth, setAuth] = useState(false);
