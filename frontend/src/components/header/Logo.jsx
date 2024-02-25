@@ -5,8 +5,8 @@ export const Logo = () => {
   return (
     <div className=" flex gap-2 items-center">
       <img className="max-w-[47px]" src={logo} alt="logo.png" />
-      <p className="text-2xl text-do_green font-sans font-500 hidden sm:block">
-        Do That Task.
+      <p className="text-3xl text-do_green font-abril font-500 hidden sm:block">
+        Dothatask
       </p>
     </div>
   );
