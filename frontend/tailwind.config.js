@@ -17,7 +17,25 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        ubuntu: ['Ubuntu', 'sans-serif'],
+        abril: ['"Abril Fatface"', 'cursive'],
+      },
+      fontWeight: {
+        '300': 300,
+        '400': 400,
+        '500': 500,
+        '600': 600,
+        '700': 700,
+        '800': 800,
+        '900': 900,
+      },
       colors: {
+        do_green: '#00B05E',
+        do_hover_green: '#008A4B',
+        do_gray_text: '#6C6C6C',
+        do_gray_text_input: '#909090',
+        do_white: 'F7F7F7',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -74,6 +92,7 @@ module.exports = {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
-],
+      require('@tailwindcss/typography'),
+      require("tailwindcss-animate")
+    ],
 }
