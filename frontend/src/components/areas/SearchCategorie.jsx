@@ -26,7 +26,7 @@ function SearchCategorie() {
                 <button
                     type="submit"
                     className="md:text-2xl sm:text-lg text-sm font-light bg-do_green hover:bg-do_hover_green
-                    md:h-16 h-12 text-white rounded-tr-[40px] md:w-[195px] w-[90px] rounded-br-[40px]"
+                    md:h-16 h-12 text-white rounded-tr-[40px] md:w-[195px] w-[90px] rounded-br-[40px] transition ease-in delay-150"
                 >
                     Search
                 </button>
