@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from sqlalchemy import Column, String, ForeignKey, Integer, DateTime
 from sqlalchemy.orm import relationship
-from ..models import Base, BaseModle
+from models.base_model import Base, BaseModle
 
 
 

@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
 from sqlalchemy import Column, Integer, String, Text, ForeignKey
 from sqlalchemy.orm import relationship
-from .base_model import Base, BaseModle
-from .base_model import Base, BaseModle
 from .users import User
+from .base_model import BaseModel, Base
 
-class Worker(Base, BaseModle, User):
+class Worker(BaseModel, Base, User):
     __tablename__ = 'workers'
     title = Column(String(255), nullable=False)
     status = Column(String(20), nullable=False)
     description = Column(Text)
     category_id = Column(Integer, ForeignKey('categories.id'))
-    category = relationship('Category', back_populates='worker')
+    category = relationship('Category', back_populates='workers')
     image_id = Column(Integer, ForeignKey('images.id'))
     worker_images = relationship('WorkerImage', back_populates='worker')
 

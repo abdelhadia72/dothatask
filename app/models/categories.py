@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-from sqlalchemy import Column, String, Text, DateTime, Integer
+from sqlalchemy import Column, String, Text
 from sqlalchemy.orm import relationship
-from models import Base, BaseModle
+from models.base_model import Base, BaseModle
 
 
 class Category(Base, BaseModle):

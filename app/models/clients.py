@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-from sqlalchemy import Column, String, Text, Integer, DateTime, Date
-from sqlalchemy.orm import relationship
-from . import Base, BaseModle
+from sqlalchemy import Column, String, Text
+from models.base_model import Base, BaseModel
 from .users import User
 
-class Client(Base, BaseModle, User):
+class Client(Base, BaseModel, User):
     __tablename__ = 'clients'
 
     description = Column(Text)
