@@ -1,19 +1,66 @@
 import { Search } from 'lucide-react'
 import React from 'react'
 import SearchCategorie from '../areas/SearchCategorie'
+import { RiCameraLensFill } from "react-icons/ri";
+import { FaHammer } from "react-icons/fa";
+import { BsFillLightningChargeFill } from "react-icons/bs";
+import { FaCookieBite } from "react-icons/fa";
+import { FaPaintRoller } from "react-icons/fa";
+import { FaScissors } from "react-icons/fa6";
+import { FaPencilRuler } from "react-icons/fa";
+
 
 function Homepage() {
+    const categories = [
+        { name: 'Photographer', icon: <RiCameraLensFill className='categorie-icons' /> },
+        { name: 'builder', icon: <FaHammer className='categorie-icons' /> },
+        { name: 'Electrician', icon: <BsFillLightningChargeFill className='categorie-icons' /> },
+        { name: 'Baker', icon: <FaCookieBite className='categorie-icons' /> },
+        { name: 'Painter', icon: <FaPaintRoller className='categorie-icons' /> },
+        { name: 'Barber', icon: <FaScissors className='categorie-icons' /> },
+        { name: 'Designer', icon: <FaPencilRuler className='categorie-icons' /> },
+
+    ]
+
+    // popular work
+    const popularWorks = [1, 2, 3, 4];
     return (
-        <div>
+        <div className='flex flex-col items-center justify-center'>
             <div className='md:w-full relative bg-neutral-100 z-[-1]'>
-                <div className='block w-full md:h-[45vh] h-[30vh] z-[-1]'>
-                    <div className="md:size-[314px] size-[140px] circle-design buttom-10 md:mt-[-70px] mt-[-50px] md:ml-[-111px] ml-[-50px] z-[-1]" />
-                    <div className="md:size-[238px] size-[95px]  circle-design md:right-[-140px] right-[-50px]" />
-                    <div className="md:size-[320px] size-[150px] circle-design md:top-[122px] top-[50px] md:right-[-140px] right-[-50px]" />
-                    <span className="text-neutral-800 lg:text-5xl md:text-3xl text-xl md:left-[33%] sm:left-[30%] left-[30%] absolute mx-auto w-[40%] text-center md:mt-[60px] py-9 font-ubuntu">Find The Right Tasker</span>
+                <div className="md:size-[314px] size-[140px] circle-design buttom-10 md:mt-[-70px] mt-[-50px] md:ml-[-111px] ml-[-200px] z-[-1]" />
+                <div className='flex w-full items-center justify-center flex-col md:h-[45vh] h-[30vh] z-[-1]'>
+                    <div className="md:size-[238px] size-[95px]  circle-design md:right-[-140px] bottom-[80px] right-[-150px]" />
+                    <div className="md:size-[320px] size-[150px] circle-design md:top-[120px] top-[90px] md:right-[-140px] right-[-150px]" />
+                    <span className="text-neutral-800 lg:text-5xl md:text-3xl text-xl md:w-[40%] w-auto text-center md:mt-[60px] py-9 font-ubuntu">Find The Right Tasker</span>
                 </div>
             </div>
             <SearchCategorie />
+            <div className="inline-flex items-center justify-center md:gap-[50px] gap-0 mt-[75px] relative">
+                {categories.map((e) =>
+                    <div className="categorie-style group">
+                        <div>{e.icon}</div>
+                        <div className="w-fit font-ubuntu font-bold md:text-md text-xxs group-hover:text-gray-500 transition ease-in delay-100 ">
+                            {e.name}
+                        </div>
+                    </div>
+                )}
+            </div>
+            <div className="w-full h-[0px] border border-neutral-600 md:my-[80px] my-[20px]"></div>
+            <div className="text-neutral-800 md:text-4xl text-md font-bold md:mt-10 mt-2 mb-6 font-ubuntu">Popular Works</div>
+            <div className='flex gap-5 my-9'>
+                <svg className='absolute left-0 z-[-1] top-[880px]' width="757" height="800" viewBox="0 0 757 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0C0 0 220.181 43.3312 313.5 139.5C406.553 235.395 360.63 351.18 443.5 456C536 573 725.312 482 755 671.5C795.135 927.683 0 721 0 721V0Z" fill="#00B05E" />
+                </svg>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-2">
+                    {popularWorks.map((e) => (
+                        <div className="md:w-[284px] w-[234px] h-auto bg-white rounded-[15px] shadow flex-col justify-start items-center gap-[20px] pb-5 inline-flex">
+                            <img className="md:w-[284px] w-[234px] md:h-[189px] h-[139px] rounded-tl-[15px] rounded-tr-[15px]" src="https://via.placeholder.com/284x189" />
+                            <div className="md:w-[247px] w-[217px] text-center text-neutral-800 md:text-xl md:text-md font-normal font-ubuntu">A craftsman specialized in installing and maintaining electrical wiring systems.</div>
+                            <a className="w-40 text-center md:text-xl md:text-md font-normal cursor-pointer text-do_green hover:text-do_hover_green font-ubuntu">Check out more...</a>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }
