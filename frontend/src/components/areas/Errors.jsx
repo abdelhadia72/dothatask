@@ -2,7 +2,7 @@ import React from 'react';
 
 const Errors = ({ content }) => {
     return (
-        <div className="text-red-500 p-4 rounded">
+        <div className="text-red-500 px-2 rounded">
             {content}
         </div>
     );

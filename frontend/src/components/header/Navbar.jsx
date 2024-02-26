@@ -10,7 +10,7 @@ export const Navbar = () => {
   const clickHandler = () => setOpen(!open);
 
   return (
-    <div className=" container font-ubuntu m-auto my-8 border-b-2 pb-5 ">
+    <div className=" container w-[100%] font-ubuntu m-auto my-8 border-b-2 pb-5 bg-neutral-100">
       <ul className="flex justify-between items-center flex-wrap">
         <li className="logo">
           <Logo />

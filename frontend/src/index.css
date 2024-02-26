@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -67,6 +69,12 @@
   }
 }
 
+@layer components {
+  .text-md {
+    font-size: 1rem;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -86,13 +94,17 @@
 }
 
 .custom-button-style {
-  @apply lg:w-[542px] md:w-[480px] w-[225px] h-12 p-2.5 hover:bg-emerald-400 bg-emerald-600 rounded-[5px] 
-  shadow-lg justify-center items-center gap-[113px] 
-  inline-flex mt-[40px] transition-all 
-  duration-100 ease-in-out cursor-pointer shadow-gray-100 
+  @apply lg:w-[542px] md:w-[480px] w-[225px] h-12 p-2.5 hover:bg-do_hover_green bg-do_green rounded-[5px] shadow-lg justify-center items-center gap-[113px] inline-flex mt-[40px] transition-all duration-100 ease-in-out cursor-pointer shadow-gray-100
 }
 
 .custom-input-style {
-  @apply lg:w-[542px] md:w-[480px] w-[225px] h-12 p-2.5 text-lg bg-white 
-  rounded-[5px] shadow justify-start items-center gap-[113px] inline-flex mx-auto;
+  @apply lg:w-[542px] md:w-[480px] w-[225px] h-12 p-2.5 text-lg bg-white rounded-[5px] shadow justify-start items-center gap-[113px] inline-flex mx-auto outline-none;
+}
+
+.circle-design {
+  @apply opacity-80 rounded-full md:border-[20px] border-[9px] border-do_green absolute
+}
+
+.place-input {
+  @apply text-neutral-500 md:text-2xl sm:text-lg text-sm font-light md:w-[220px] sm:w-[150px] w-[100px] md:h-16 h-12 pl-5 pr-2.5 py-2.5 bg-white border border-neutral-500 justify-start items-center gap-2.5 inline-flex outline-none;
 }
