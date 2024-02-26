@@ -30,6 +30,9 @@ module.exports = {
         '800': 800,
         '900': 900,
       },
+      fontSize: {
+        'xxs': '.5rem', // 8px
+      },
       colors: {
         do_green: '#00B05E',
         do_hover_green: '#008A4B',
