@@ -5,6 +5,7 @@ import ForgotPassword from "./components/Auth/ForgotPassword";
 import Emailsent from "./components/pages/Emailsent";
 import Homepage from "./components/pages/Homepage";
 import SearchCategorie from "./components/areas/SearchCategorie";
+import Footer from "./components/footer/Footer";
 
 export const App = () => {
   const [Auth, setAuth] = useState(false);
@@ -15,6 +16,7 @@ export const App = () => {
       </div>
       <Routers />
       <Homepage />
+      <Footer />
     </div>
   );
 };
