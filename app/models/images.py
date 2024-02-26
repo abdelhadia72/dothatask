@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
-from sqlalchemy import Column, String, ForeignKey, Integer
+from sqlalchemy import Column, String, ForeignKey, Integer, DateTime
 from sqlalchemy.orm import relationship
-from models import Base
+from models import Base, BaseModle
 
 
-class Image(Base):
-    """ Image model for storing image data """
+
+class Image(Base, BaseModle):
     __tablename__ = 'images'
-    url = Column(String(255), nullable=False)
-
-    def __init__(self, *args, **kwargs):
-        """ Initialize the Image model """
-        super().__init__(*args, **kwargs)
+    image_url = Column(String(255), nullable=False)
+    user = relationship('User', back_populates='image') 

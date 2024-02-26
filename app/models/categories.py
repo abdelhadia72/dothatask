@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-from sqlalchemy import Column, String, ForeignKey, Integer
+from sqlalchemy import Column, String, Text, DateTime, Integer
 from sqlalchemy.orm import relationship
-from models import Base
+from models import Base, BaseModle
 
 
-class Category(Base):
+class Category(Base, BaseModle):
     """ Category model for storing category data """
     __tablename__ = 'categories'
-    name = Column(String(128), nullable=False)
-    description = Column(String(255), nullable=True)
-    tasks = relationship("Task", back_populates="category")
+    name = Column(String(100), nullable=False)
+    description = Column(Text, nullable=True)
+    worker = relationship('Worker', back_populates='category')
 
     def __init__(self, *args, **kwargs):
         """ Initialize the Category model """
