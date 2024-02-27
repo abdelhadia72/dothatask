@@ -10,14 +10,3 @@ class Review(Base, BaseModle):
     rating = Column(Integer, nullable=False)
     client_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     worker_id = Column(Integer, ForeignKey('workers.id'), nullable=False)
-
-    def to_dict(self):
-        return {
-            'id': self.id,
-            'description': self.description,
-            'rating': self.rating,
-            'client_id': self.client_id,
-            'worker_id': self.worker_id,
-            'created_at': self.created_at.isoformat(),
-            'updated_at': self.updated_at.isoformat()
-        }
