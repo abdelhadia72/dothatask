@@ -11,12 +11,14 @@ from models.review import Review
 from models.worker_image import WorkerImage
 from models.workers import Worker
 from models.clients import Client
+
+
 class DBManager:
-    def __init__(self, db_user, db_password, db_host, db_name):
-        self.db_user = db_user
-        self.db_password = db_password
-        self.db_host = db_host
-        self.db_name = db_name
+    def __init__(self):
+        self.db_user = 'abdel'
+        self.db_password = 'Abdo2005'
+        self.db_host = 'localhost'
+        self.db_name = 'DB_D'
         self.engine = create_engine(self.get_database_url())
         self.SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
 
@@ -33,14 +35,17 @@ class DBManager:
         finally:
             db.close()
 
-    def add_city(self):
-        db = self.SessionLocal()
-        try:
-            city = City(name="San Francisco")
-            db.add(city)
-            db.commit()
-        finally:
-            db.close()
+    # def tryme(self):
+    #     return "I'm working!"
+
+    # def add_city(self):
+    #     db = self.SessionLocal()
+    #     try:
+    #         city = City(name="San Francisco")
+    #         db.add(city)
+    #         db.commit()
+    #     finally:
+    #         db.close()
 
     # def add_client(self, first_name, last_name, password, email, gender, birth_date, phone, address, description, status):
     #     db = self.SessionLocal()
@@ -64,11 +69,11 @@ class DBManager:
     #     finally:
     #         db.close()
 
-DB_USER = 'root'
-DB_PASSWORD = 'root'
-DB_HOST = 'localhost'
-# DB_NAME = 'TEST_DB'
-DB_NAME = 'DB_D'
+# DB_USER = 'root'
+# DB_PASSWORD = 'root'
+# DB_HOST = 'localhost'
+# # DB_NAME = 'TEST_DB'
+# DB_NAME = 'DB_D'
 
 # db_manager = DBManager(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
 # db_manager.show(Client)
