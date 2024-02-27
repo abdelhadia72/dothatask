@@ -14,12 +14,3 @@ class Worker(User):
     __mapper_args__ = {
         'polymorphic_identity': 'worker',
     }
-
-    # def to_dict(self):
-    #     return {
-    #         'worker_id': self.worker_id,
-    #         'worker_name': self.worker_name,
-    #         'worker_email': self.worker_email,
-    #         'worker_phone': self.worker_phone,
-    #         'city_id': self.city_id
-    #     }
