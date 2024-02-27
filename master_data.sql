@@ -18,6 +18,8 @@
 --
 -- Table structure for table `categories`
 --
+create database DB_D;
+USE DB_D;
 
 DROP TABLE IF EXISTS `categories`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
