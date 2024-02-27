@@ -9,7 +9,6 @@ Base = declarative_base()
 class BaseModle:
     """ Base class for all models in the app """
     __abstract__ = True
-    # FIXME add the uuid now you can't as the database already has the id as integer
     id = Column(BigInteger, primary_key=True, autoincrement=True)
     created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
     updated_at = Column(DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)

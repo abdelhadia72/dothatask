@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-from sqlalchemy import Column, String, ForeignKey, Integer, Enum, DateTime, Date
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, String, ForeignKey, Integer, Enum, Date, BigInteger
 from models.base_model import Base, BaseModle
 
 
@@ -16,7 +15,9 @@ class User(Base, BaseModle):
     phone = Column(String(120), nullable=False)
     address = Column(String(255), nullable=True)
     type = Column(Enum('worker', 'client'), nullable=False)
-    image_url = Column(Integer, ForeignKey('images.id'))
-    image = relationship('Image', back_populates='user')
+    image_id = Column(Integer, ForeignKey('images.id'))
     city_id = Column(Integer, ForeignKey('cities.id'))
-    city = relationship("City", back_populates="user")
+
+    __mapper_args__ = {
+        'polymorphic_identity': 'user',
+    }

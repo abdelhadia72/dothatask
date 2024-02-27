@@ -9,8 +9,5 @@ class Category(Base, BaseModle):
     __tablename__ = 'categories'
     name = Column(String(100), nullable=False)
     description = Column(Text, nullable=True)
-    worker = relationship('Worker', back_populates='category')
+    # worker = relationship('Worker', back_populates='category')
 
-    def __init__(self, *args, **kwargs):
-        """ Initialize the Category model """
-        super().__init__(*args, **kwargs)
