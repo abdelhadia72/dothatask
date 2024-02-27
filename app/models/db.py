@@ -32,7 +32,7 @@ class DBManager:
             return elements
         finally:
             db.close()
-    
+
     def add_city(self):
         db = self.SessionLocal()
         try:

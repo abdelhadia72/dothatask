@@ -1,8 +1,12 @@
 {
     "cSpell.ignoreWords": [
+        "Modle",
         "SQLALCHEMY",
         "autoflush",
+        "clss",
         "dotask",
+        "jsonify",
+        "onupdate",
         "pymysql",
         "sessionmaker"
     ]
