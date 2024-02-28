@@ -76,6 +76,9 @@
   .delay-10 {
     transition-delay: 10ms;
   }
+  .selected {
+    opacity: 1;
+  }
 }
 
 @layer base {
@@ -120,4 +123,8 @@
 
 .categorie-icons {
   @apply md:size-[50px] size-[25px] group-hover:text-gray-500 hover:opacity-40 opacity-80
+}
+
+.images-service {
+  @apply lg:w-[250px] w-[58px] lg:h-[91px] h-[32px] object-cover hover:opacity-100 opacity-50
 }
