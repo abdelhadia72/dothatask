@@ -108,3 +108,11 @@
 .place-input {
   @apply text-neutral-500 md:text-2xl sm:text-lg text-sm font-light md:w-[220px] sm:w-[150px] w-[100px] md:h-16 h-12 pl-5 pr-2.5 py-2.5 bg-white border border-neutral-500 justify-start items-center gap-2.5 inline-flex outline-none;
 }
+
+.categorie-style {
+  @apply inline-flex flex-col mt-0 items-center md:w-[120px] w-[50px] hover:px-6 p-4 rounded-2xl md:gap-[16px] gap-[5px] hover:shadow-sm shadow-gray-500 transition ease-in delay-150 relative
+}
+
+.categorie-icons {
+  @apply md:size-[60px] size-[30px] group-hover:text-gray-500 hover:opacity-70 transition ease-in delay-150
+}
