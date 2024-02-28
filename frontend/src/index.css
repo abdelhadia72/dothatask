@@ -73,6 +73,9 @@
   .text-md {
     font-size: 1rem;
   }
+  .delay-10 {
+    transition-delay: 10ms;
+  }
 }
 
 @layer base {
@@ -86,7 +89,9 @@
 }
 
 #root {
-  height: 982px;
+  height: auto;
+  overflow-y:hidden;
+  overflow-x: hidden;
 }
 
 .custom-dynamic-style {
@@ -110,9 +115,9 @@
 }
 
 .categorie-style {
-  @apply inline-flex flex-col mt-0 items-center md:w-[120px] w-[50px] hover:px-6 p-4 rounded-2xl md:gap-[16px] gap-[5px] hover:shadow-sm shadow-gray-500 transition ease-in delay-150 relative
+  @apply inline-flex flex-col mt-0 items-center md:w-[120px] w-[50px] hover:px-6 p-4 rounded-2xl md:gap-[16px] gap-[5px] relative
 }
 
 .categorie-icons {
-  @apply md:size-[60px] size-[30px] group-hover:text-gray-500 hover:opacity-70 transition ease-in delay-150
+  @apply md:size-[50px] size-[25px] group-hover:text-gray-500 hover:opacity-40 opacity-80
 }

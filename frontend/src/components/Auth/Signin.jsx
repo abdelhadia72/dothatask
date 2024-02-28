@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import google_logo from '../../assets/google_logo.png';
+import google_logo from '../assets/images/google_logo.png';
 import { useForm } from 'react-hook-form';
 import Errors from '../areas/Errors';
 

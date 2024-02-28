@@ -10,7 +10,7 @@ function Footer() {
                 <div className='flex flex-col gap-2 mt-[-20px] mb-[97px] mr-[50px]'>
                     <div className="text-neutral-800 md:text-2xl text-[20px] font-medium font-Ubuntu">Categories</div>
                     {categories.map((e) =>
-                        <div className="text-neutral-400 md:text-[22px] text-[17px] font-medium font-Ubuntu">{e}</div>
+                        <a className="text-do_gray_text hover:do_hover_gray_text md:text-[22px] text-[17px] cursor-pointer font-medium font-Ubuntu">{e}</a>
                     )}
                 </div>
             </div>
