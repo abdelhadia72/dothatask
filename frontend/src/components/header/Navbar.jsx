@@ -25,6 +25,13 @@ export const Navbar = () => {
             }`}>
           <ul className="flex gap-5 font-500 items-center">
             <li>
+              <Link to="/">
+                <span className="hover:text-do_green transition-all">
+                  Home
+                </span>
+              </Link>
+            </li>
+            <li>
               <Link to="/services">
                 <span className="hover:text-do_green transition-all">
                   Services
