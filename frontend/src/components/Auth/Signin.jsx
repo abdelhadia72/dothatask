@@ -28,14 +28,14 @@ function Signin() {
                                 type="email"
                                 placeholder="email adress"
                                 {...register('email', { required: true })}
-                                className="custom-input-style"
+                                className="custom-input-style lg:w-[542px] md:w-[480px] w-[225px]"
                             />
                             {emailErr ? <Errors content={emailErr} /> : <></>}
                             <input
                                 type="password"
                                 placeholder="Password"
                                 {...register('password', { required: true })}
-                                className="custom-input-style"
+                                className="custom-input-style lg:w-[542px] md:w-[480px] w-[225px]"
                             />
                         </div>
                         <div className="justify-start items-center md:gap-[195px] lg:gap-[238px] gap-4 inline-flex mb-[-40px]">
