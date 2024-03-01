@@ -6,6 +6,7 @@ import ForgotPassword from '../Auth/ForgotPassword';
 import Services from '../pages/Services';
 import Homepage from '../pages/Homepage';
 import ServiceDetails from '../pages/ServiceDetails';
+import { Profilepage } from '../pages/ProfilePage';
 
 const Routers = () => {
   return (
@@ -16,6 +17,7 @@ const Routers = () => {
       <Route path="/login" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
+      <Route path="/profile" element={<Profilepage />} />
     </Routes>
   );
 };
