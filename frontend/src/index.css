@@ -76,6 +76,9 @@
   .delay-10 {
     transition-delay: 10ms;
   }
+  .selected {
+    opacity: 1;
+  }
 }
 
 @layer base {
@@ -103,7 +106,7 @@
 }
 
 .custom-input-style {
-  @apply lg:w-[542px] md:w-[480px] w-[225px] h-12 p-2.5 text-lg bg-white rounded-[5px] shadow justify-start items-center gap-[113px] inline-flex mx-auto outline-none;
+  @apply h-12 p-2.5 text-lg bg-white rounded-[5px] shadow justify-start items-center gap-[113px] inline-flex mx-auto outline-none;
 }
 
 .circle-design {
@@ -120,4 +123,8 @@
 
 .categorie-icons {
   @apply md:size-[50px] size-[25px] group-hover:text-gray-500 hover:opacity-40 opacity-80
+}
+
+.images-service {
+  @apply lg:w-[182px] w-[58px] h-auto object-cover hover:opacity-100 opacity-50
 }
