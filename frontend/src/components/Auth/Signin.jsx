@@ -1,20 +1,32 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import google_logo from '../assets/images/google_logo.png';
 import { useForm } from 'react-hook-form';
 import Errors from '../areas/Errors';
 
+var LOGGED = false
+
 function Signin() {
     const [emailErr, setemailErr] = useState('')
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors },
     } = useForm()
+    const loggedPerson ={ email :"othmansalahi@gmail.com", password:"qwerty"}
     const onSubmit = (e) => {
-        console.log(e)
-        e.email !== 'othman@com' ? setemailErr("email is not valid") : setemailErr('') 
+        if (e.email === loggedPerson.email && e.password === loggedPerson.password)
+        {
+            LOGGED = true
+            console.log('logged in')
+            navigate('/')
+
+        }
+        else
+            setemailErr('Email or password is incorrect')
+
     }
 
     return (
@@ -72,3 +84,4 @@ function Signin() {
 }
 
 export default Signin
+export { LOGGED }
