@@ -11,15 +11,6 @@ dd = DBManager()
 @app_v1.route('/login', methods=['POST'], strict_slashes=False)
 def create_user():
     """ create user """
-    data = request.get_json()
-    if not data:
-        return jsonify({"error": "Not a JSON"}), 400
-    if 'email' not in data or 'password' not in data:
-        return jsonify({"error": "Missing email or password"}), 400
-    user = User(**data)
-    user.save()
-    return jsonify(user.to_dict()), 201
-
     # data = request.get_json()
     # if not data:
     #     return jsonify({"error": "Not a JSON"}), 400

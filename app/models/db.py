@@ -34,9 +34,14 @@ class DBManager:
             return elements
         finally:
             db.close()
-
-    # def tryme(self):
-    #     return "I'm working!"
+    
+    def get(self, clss, id):
+        db = self.SessionLocal()
+        try:
+            element = db.query(clss).get(id)
+            return element
+        finally:
+            db.close()
 
     # def add_city(self):
     #     db = self.SessionLocal()
@@ -47,54 +52,9 @@ class DBManager:
     #     finally:
     #         db.close()
 
-    # def add_client(self, first_name, last_name, password, email, gender, birth_date, phone, address, description, status):
-    #     db = self.SessionLocal()
-    #     try:
-    #         client = Client(
-    #             first_name=first_name,
-    #             last_name=last_name,
-    #             password=password,
-    #             email=email,
-    #             gender=gender,
-    #             birth_date=birth_date,
-    #             phone=phone,
-    #             address=address,
-    #             description=description,
-    #             status=status,
-    #             image_id=1,
-    #             type='client'
-    #         )
-    #         db.add(client)
-    #         db.commit()
-    #     finally:
-    #         db.close()
 
 # DB_USER = 'root'
 # DB_PASSWORD = 'root'
 # DB_HOST = 'localhost'
 # # DB_NAME = 'TEST_DB'
 # DB_NAME = 'DB_D'
-
-# db_manager = DBManager(DB_USER, DB_PASSWORD, DB_HOST, DB_NAME)
-# db_manager.show(Client)
-# db_manager.show(Worker)
-# db_manager.show(User)
-# db_manager.show(Review)
-# db_manager.show(Image)
-# db_manager.show(WorkerImage)
-# db_manager.show(Category)
-# db_manager.show(City)
-# db_manager.add_city()
-
-# db_manager.add_client(
-#     first_name='John',
-#     last_name='Doe',
-#     password='password123',
-#     email='john.doe@example.com',
-#     gender='Male',
-#     birth_date='1990-01-01',
-#     phone='1234567890',
-#     address='123 Main St, City, Country',
-#     description='Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-#     status='Active'
-# )
