@@ -59,7 +59,7 @@ function Homepage() {
             <div className="w-full h-[0px] border border-neutral-600 md:my-[80px] my-[20px]"></div>
             <div className="text-neutral-800 md:text-4xl text-md font-bold md:mt-10 mt-2 mb-6 font-ubuntu">Popular Works</div>
             <div className='flex gap-5 my-9'>
-                <svg className='md:w-[757px] absolute left-0 z-[-1] top-[880px]' height="800" viewBox="0 0 757 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className='md:w-[757px] w-[359px] absolute left-0 z-[-1] top-[880px]' height="800" viewBox="0 0 757 800" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0C0 0 220.181 43.3312 313.5 139.5C406.553 235.395 360.63 351.18 443.5 456C536 573 725.312 482 755 671.5C795.135 927.683 0 721 0 721V0Z" fill="#00B05E" />
                 </svg>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-2">
