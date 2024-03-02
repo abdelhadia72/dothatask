@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import Errors from '../areas/Errors';
 
 var LOGGED = false
+LOGGED = true
 
 function Signin() {
     const [emailErr, setemailErr] = useState('')
