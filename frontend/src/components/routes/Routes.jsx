@@ -7,6 +7,7 @@ import Services from '../pages/Services';
 import Homepage from '../pages/Homepage';
 import ServiceDetails from '../pages/ServiceDetails';
 import { Profilepage } from '../pages/ProfilePage';
+import AddService from '../pages/AddService';
 
 const Routers = () => {
   return (
@@ -14,6 +15,7 @@ const Routers = () => {
       <Route path="/" element={<Homepage />} />
       <Route path="/details" element={<ServiceDetails />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/add-service" element={<AddService />} />
       <Route path="/login" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
