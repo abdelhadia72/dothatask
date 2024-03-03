@@ -7,7 +7,7 @@ function AddService() {
     return (
         <div className='flex lg:flex-row flex-col gap-5 font-ubuntu'>
             <FormAddService />
-            <div className=" bg-black border lg:rotate-90 rotate-180 border-zinc-400"></div>
+            <div className=" bg-black border lg:rotate-0 rotate-180 border-zinc-400"></div>
             <AddServiceHelp />
         </div>
     )
