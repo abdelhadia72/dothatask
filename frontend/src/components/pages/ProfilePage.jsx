@@ -5,6 +5,7 @@ import { Statistics } from "../Profile/Statistics";
 import { FiPlusCircle } from "react-icons/fi";
 import { ProfileCard } from "../Profile/ProfileCard";
 import { Comment } from "../Profile/Comment";
+import { Link } from "react-router-dom";
 
 export const Profilepage = () => {
   return (
@@ -61,9 +62,11 @@ export const Profilepage = () => {
       </div>
       <div className="right_side flex flex-col lg:w-1/4 items-end">
         <h1 className="mt-10">
-          <Button className="border-green-500 border-2 text-green-600  bg-transparent hover:bg-green-500 hover:text-white">
-            Profile setting
-          </Button>
+          <Link to={'/profile-setting'}>
+            <Button className="border-green-500 border-2 text-green-600  bg-transparent hover:bg-green-500 hover:text-white">
+              Profile setting
+            </Button>
+          </Link>
         </h1>
         <Statistics />
       </div>
