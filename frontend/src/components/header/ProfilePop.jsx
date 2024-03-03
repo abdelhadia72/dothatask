@@ -23,10 +23,10 @@ function ProfilePop() {
                 <GoPerson className="size-6 relative" />
                 <div className="text-stone-950 text-sm font-medium font-Ubuntu">Profile</div>
             </Link>
-            <div className="w-[193px] h-[34px] pl-[15px] pr-2.5 py-[7px] left-0 top-[34px] absolute bg-white justify-start items-center gap-2.5 inline-flex hover:opacity-60">
+            <Link to={'/add-service'} className="w-[193px] h-[34px] pl-[15px] pr-2.5 py-[7px] left-0 top-[34px] absolute bg-white justify-start items-center gap-2.5 inline-flex hover:opacity-60">
                 <IoAddCircleOutline className="size-6 relative" />
                 <div className="text-stone-950 text-sm font-medium font-Ubuntu">Add service</div>
-            </div>
+            </Link>
             <div className="w-[193px] h-[34px] pl-[15px] pr-2.5 py-[7px] left-0 top-[68px] absolute bg-white justify-start items-center gap-2.5 inline-flex hover:opacity-60">
                 <IoIosLogOut className="size-6 relative" />
                 <div className="text-stone-950 text-sm font-medium font-Ubuntu">Sign out</div>
