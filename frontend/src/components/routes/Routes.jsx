@@ -8,6 +8,7 @@ import Homepage from '../pages/Homepage';
 import ServiceDetails from '../pages/ServiceDetails';
 import { Profilepage } from '../pages/ProfilePage';
 import AddService from '../pages/AddService';
+import SettingProfile from '../pages/SettingProfile';
 
 const Routers = () => {
   return (
@@ -20,6 +21,7 @@ const Routers = () => {
       <Route path="/signup" element={<Signup />} />
       <Route path="/forgotpassword" element={<ForgotPassword />} />
       <Route path="/profile" element={<Profilepage />} />
+      <Route path="/profile-setting" element={<SettingProfile />} />
     </Routes>
   );
 };
