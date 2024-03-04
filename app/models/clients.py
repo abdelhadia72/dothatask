@@ -9,6 +9,7 @@ class Client(User):
     description = Column(Text)
     status = Column(String(255), nullable=False)
     user_id = Column(Integer, ForeignKey('users.id'))
+    
 
     __mapper_args__ = {
         'polymorphic_identity': 'client',

@@ -4,6 +4,7 @@ from datetime import datetime
 from sqlalchemy import Column, DateTime, BigInteger
 from sqlalchemy.orm import declarative_base
 
+
 Base = declarative_base()
 
 time = "%Y-%m-%d %H:%M:%S.%f"
@@ -26,6 +27,7 @@ class BaseModle:
         dictionary['updated_at'] = self.updated_at.strftime(time)
 
         return dictionary
+    
     # if save_fs is None:
     #     if "password" in new_dict:
     #             del new_dict["password"] 

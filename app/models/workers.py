@@ -11,6 +11,7 @@ class Worker(User):
     image_id = Column(Integer, ForeignKey('images.id'))
     user_id = Column(Integer, ForeignKey('users.id'))
 
+
     __mapper_args__ = {
         'polymorphic_identity': 'worker',
     }
