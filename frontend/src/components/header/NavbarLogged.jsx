@@ -52,8 +52,8 @@ function NavbarLogged() {
           </li>
         </ul>
         <div className={`${profileOpen ? '' : 'hidden'}`}>
-            <div class="size-7 origin-bottom-left rotate-45 transform border border-t-transparent bg-white absolute top-19 right-14 ">
-                <div class="h-16 w-16 border-t-30 border-r-30 bg-transparent"></div>
+            <div className="size-7 origin-bottom-left rotate-45 transform border border-t-transparent bg-white absolute top-19 right-14 ">
+                <div className="h-16 w-16 border-t-30 border-r-30 bg-transparent"></div>
             </div>
             <ProfilePop />
         </div>
