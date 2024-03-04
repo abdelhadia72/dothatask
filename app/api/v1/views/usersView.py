@@ -2,11 +2,12 @@
 """ objects that handle all default RestFul API actions for Users """
 
 from flask import jsonify, request
-from api.v1.views import app_v1
+from api.v1.views import app_v1, SessionLocal, db_manager
 from models.users import User
 from models.db import DBManager
 
-dd = DBManager()
+#dbm = DBManager()
+session = SessionLocal()
 
 
 @app_v1.route('/users', methods=['POST'], strict_slashes=False)
@@ -31,9 +32,13 @@ def create_user():
         return jsonify({"error": "Missing phone"}), 400
     if "type" not in data:
         return jsonify({"error": "Missing type"}), 400
-    user = User(**data)
-    dd.add(User, user)
-    return jsonify(user.to_dict()), 201
+
+    db_manager.add(User, User(**data))
+    get_user = session.query(User).filter_by(email=data['email']).first()
+    if get_user is None:
+        return jsonify({"error": "User not found"}), 404
+    return jsonify(get_user.to_dict()), 201
+
 
 
 @app_v1.route('/users', methods=['GET'], strict_slashes=False)
@@ -47,7 +52,7 @@ def get_users():
 @app_v1.route('/users/<user_id>', methods=['GET'], strict_slashes=False)
 def get_user(user_id):
     """ get user by id """
-    user = dd.get(User, user_id) 
+    user = dbm.get(User, user_id) 
     if not user:
         return jsonify({"error": "User not found"}), 404
     return jsonify(user.to_dict())
@@ -56,17 +61,17 @@ def get_user(user_id):
 @app_v1.route('/users/<user_id>', methods=['DELETE'], strict_slashes=False)
 def delete_user(user_id):
     """ delete user by id """
-    user = dd.get(User, user_id)
+    user = dbm.get(User, user_id)
     if not user:
         return jsonify({"error": "User not found"}), 404
-    dd.delete(User, user_id)
+    dbm.delete(User, user_id)
     return jsonify({}), 204
 
 
 @app_v1.route('/users/<user_id>', methods=['PUT'], strict_slashes=False)
 def update_user(user_id):
     """ update user by id """
-    user = dd.get(User, user_id)
+    user = dbm.get(User, user_id)
     if not user:
         return jsonify({"error": "User not found"}), 404
     data = request.get_json()
@@ -74,5 +79,5 @@ def update_user(user_id):
         return jsonify({"error": "Not a JSON"}), 400
     for key, value in data.items():
         setattr(user, key, value)
-    dd.update(User, user_id, data)
+    dbm.update(User, user_id, data)
     return jsonify(user.to_dict()), 200
