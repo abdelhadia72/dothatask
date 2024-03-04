@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+""" DBManager class """
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -14,7 +15,9 @@ from models.clients import Client
 
 
 class DBManager:
+    """ DBManager class """
     def __init__(self):
+        """ constructor """
         self.db_user = 'abdel'
         self.db_password = 'Abdo2005'
         self.db_host = 'localhost'
@@ -22,10 +25,14 @@ class DBManager:
         self.engine = create_engine(self.get_database_url())
         self.SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
 
+
     def get_database_url(self):
+        """ get database url """
         return f"mysql+pymysql://{self.db_user}:{self.db_password}@{self.db_host}/{self.db_name}"
 
+
     def show(self, clss):
+        """ get all from database """
         db = self.SessionLocal()
         try:
             elements = db.query(clss).all()
@@ -34,14 +41,51 @@ class DBManager:
             return elements
         finally:
             db.close()
-    
+
+
     def get(self, clss, id):
+        """ get from database """
         db = self.SessionLocal()
         try:
             element = db.query(clss).get(id)
             return element
         finally:
             db.close()
+
+
+    def add(self, clss, data):
+        """ create into database """
+        db = self.SessionLocal()
+        try:
+            db.add(data)
+            db.commit()
+        finally:
+            db.close()
+
+
+    def update(self, clss, id, data):
+        """ update into database """
+        db = self.SessionLocal()
+        try:
+            element = db.query(clss).get(id)
+            for key, value in data.items():
+                setattr(element, key, value)
+            db.commit()
+        finally:
+            db.close()
+
+
+    def delete(self, clss, id):
+        """ remove from database """
+        db = self.SessionLocal()
+        try:
+            element = db.query(clss).get(id)
+            db.delete(element)
+            db.commit()
+        finally:
+            db.close()
+    
+
 
     # def add_city(self):
     #     db = self.SessionLocal()
@@ -52,9 +96,3 @@ class DBManager:
     #     finally:
     #         db.close()
 
-
-# DB_USER = 'root'
-# DB_PASSWORD = 'root'
-# DB_HOST = 'localhost'
-# # DB_NAME = 'TEST_DB'
-# DB_NAME = 'DB_D'
