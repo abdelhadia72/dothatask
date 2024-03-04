@@ -25,12 +25,9 @@ class BaseModle:
         dictionary['__class__'] = type(self).__name__
         dictionary['created_at'] = self.created_at.strftime(time)
         dictionary['updated_at'] = self.updated_at.strftime(time)
-
         return dictionary
-    
-    # if save_fs is None:
-    #     if "password" in new_dict:
-    #             del new_dict["password"] 
+
+
     def __str__(self):
         """ String representation of the base model """
         return "[{}] ({}) {}".format(

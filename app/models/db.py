@@ -3,7 +3,6 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import sessionmaker
 from models.cities import City
 from models.categories import Category
 from models.images import Image
@@ -29,6 +28,12 @@ class DBManager:
     def get_database_url(self):
         """ get database url """
         return f"mysql+pymysql://{self.db_user}:{self.db_password}@{self.db_host}/{self.db_name}"
+    
+
+    # def create_database(self):
+    #     """ create database """
+    #     Base = declarative_base()
+    #     Base.metadata.create_all(bind=self.engine)
 
 
     def show(self, clss):
