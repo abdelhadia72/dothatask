@@ -3,7 +3,7 @@ from sqlalchemy import Column, String, Text, Integer, ForeignKey
 from models.base_model import Base, BaseModle
 from models.users import User
 
-class Client(User):
+class Client(Base, BaseModle):
     __tablename__ = 'clients'
 
     description = Column(Text)
@@ -11,6 +11,6 @@ class Client(User):
     user_id = Column(Integer, ForeignKey('users.id'))
     
 
-    __mapper_args__ = {
-        'polymorphic_identity': 'client',
-    }
+    # __mapper_args__ = {
+    #     'polymorphic_identity': 'clients',
+    # }
