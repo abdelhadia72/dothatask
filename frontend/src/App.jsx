@@ -1,9 +1,22 @@
+import { useState } from "react";
+import { Navbar } from "./components/header/Navbar";
+import Routers from "./components/routes/Routes";
+import ForgotPassword from "./components/Auth/ForgotPassword";
+import Emailsent from "./components/pages/Emailsent";
+import Homepage from "./components/pages/Homepage";
+import SearchCategorie from "./components/areas/SearchCategorie";
+import Footer from "./components/footer/Footer";
+import ServiceDetails from "./components/pages/ServiceDetails";
+
 export const App = () => {
+  const [Auth, setAuth] = useState(false);
   return (
     <div>
-      <h1 className="text-green-500 text-4xl bg-gray-900 w-screen h-screen flex justify-center font-bold items-center ">
-        Hello <span className="font-bold ml-4">SADMAD ! 👋</span>
-      </h1>
+      <div className="z-[1]">
+        <Navbar />
+      </div>
+      <Routers />
+      <Footer />
     </div>
   );
 };
