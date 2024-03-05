@@ -1,22 +1,19 @@
 #!/usr/bin/env python3
-from sqlalchemy import Column, String, ForeignKey, Integer
-from sqlalchemy.orm import relationship
-from ..models import Base
+from sqlalchemy import Column, String, ForeignKey, Integer, Enum, Date, BigInteger
+from models.base_model import Base, BaseModle
 
 
-class User(Base):
+class User(Base, BaseModle):
     """ User model for storing user data """
     __tablename__ = 'users'
-    first_name = Column(String(128), nullable=True)
-    last_name = Column(String(128), nullable=True)
-    hashed_password = Column(String(128), nullable=False)
-    email = Column(String(255), nullable=False)
-    user_gender = Column(String(128), nullable=True)
-    user_phone = Column(String(20), nullable=True)
-    user_address = Column(String(255), nullable=True)
-    city_id = Column(Integer, ForeignKey('cities.id'))
-    city = relationship("City", back_populates="user")
-    worker = relationship("Worker", back_populates="user")
-    def __init__(self, *args, **kwargs):
-        """ Initialize the User model """
-        super().__init__(*args, **kwargs)
+    first_name = Column(String(150), nullable=False)
+    last_name = Column(String(150), nullable=False)
+    password = Column(String(150), nullable=False)
+    email = Column(String(150), unique=True, nullable=False)
+    gender = Column(String(120), nullable=False)
+    birth_date = Column(Date, nullable=False)
+    phone = Column(String(120), nullable=False)
+    address = Column(String(255), nullable=True)
+    type = Column(Enum('worker', 'client', 'admin', 'user'), nullable=False)
+    image_url = Column(String(255), nullable=True)
+    city_id = Column(Integer, ForeignKey('cities.id'), nullable=False)

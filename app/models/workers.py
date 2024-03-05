@@ -1,23 +1,14 @@
 #!/usr/bin/env python3
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.orm import relationship
-from .base_model import Base
+from sqlalchemy import Column, Integer, String, Text, ForeignKey
+from models.users import User
+from models.base_model import Base, BaseModle
 
-class Worker(Base):
-    __tablename__ = 'Workers'
 
-    worker_id = Column(Integer, primary_key=True, index=True)
-    worker_name = Column(String, index=True)
-    worker_email = Column(String, index=True)
-    worker_phone = Column(String)
-    city_id = Column(Integer)
-    
-    
-    def to_dict(self):
-        return {
-            'worker_id': self.worker_id,
-            'worker_name': self.worker_name,
-            'worker_email': self.worker_email,
-            'worker_phone': self.worker_phone,
-            'city_id': self.city_id
-        }
+class Worker(Base, BaseModle):
+    """ Worker model for storing worker data """
+    __tablename__ = 'workers'
+    title = Column(String(255), nullable=False)
+    status = Column(String(20), nullable=False)
+    description = Column(Text)
+    category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
