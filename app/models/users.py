@@ -3,7 +3,6 @@ from sqlalchemy import Column, String, ForeignKey, Integer, Enum, Date, BigInteg
 from models.base_model import Base, BaseModle
 
 
-
 class User(Base, BaseModle):
     """ User model for storing user data """
     __tablename__ = 'users'
@@ -15,11 +14,6 @@ class User(Base, BaseModle):
     birth_date = Column(Date, nullable=False)
     phone = Column(String(120), nullable=False)
     address = Column(String(255), nullable=True)
-    type = Column(Enum('worker', 'client', 'admin'), nullable=False)
-    # image_id should not be foreign key it must be a column image_url
-    image_id = Column(Integer, ForeignKey('images.id'))
-    city_id = Column(Integer, ForeignKey('cities.id'))
-
-    __mapper_args__ = {
-        'polymorphic_identity': 'users',
-    }
+    type = Column(Enum('worker', 'client', 'admin', 'user'), nullable=False)
+    image_url = Column(String(255), nullable=True)
+    city_id = Column(Integer, ForeignKey('cities.id'), nullable=False)

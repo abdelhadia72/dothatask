@@ -3,7 +3,6 @@ from sqlalchemy import Column, String
 from models.base_model import Base, BaseModle
 
 
-
 class City(Base, BaseModle):
     """ City Module storing cities """
     __tablename__ = "cities"
