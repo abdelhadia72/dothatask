@@ -4,7 +4,6 @@ from flask import jsonify, request
 from api.v1.views import app_v1, SessionLocal, db_manager
 from models.categories import Category
 
-
 session = SessionLocal()
 
 
