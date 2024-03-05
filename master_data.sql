@@ -104,27 +104,27 @@ UNLOCK TABLES;
 -- Table structure for table `images`
 --
 
-DROP TABLE IF EXISTS `images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `images` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `image_url` varchar(255) NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+-- DROP TABLE IF EXISTS `images`;
+-- /*!40101 SET @saved_cs_client     = @@character_set_client */;
+-- /*!50503 SET character_set_client = utf8mb4 */;
+-- CREATE TABLE `images` (
+--   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+--   `image_url` varchar(255) NOT NULL,
+--   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+--   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+--   PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+-- /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `images`
---
+-- --
+-- -- Dumping data for table `images`
+-- --
 
-LOCK TABLES `images` WRITE;
-/*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,'https://example.com/image1.jpg','2024-02-26 12:13:12','2024-02-26 12:13:12'),(2,'https://example.com/image2.jpg','2024-02-26 12:13:12','2024-02-26 12:13:12'),(3,'https://example.com/image3.jpg','2024-02-26 12:13:12','2024-02-26 12:13:12');
-/*!40000 ALTER TABLE `images` ENABLE KEYS */;
-UNLOCK TABLES;
+-- LOCK TABLES `images` WRITE;
+-- /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+-- INSERT INTO `images` VALUES (1,'https://example.com/image1.jpg','2024-02-26 12:13:12','2024-02-26 12:13:12'),(2,'https://example.com/image2.jpg','2024-02-26 12:13:12','2024-02-26 12:13:12'),(3,'https://example.com/image3.jpg','2024-02-26 12:13:12','2024-02-26 12:13:12');
+-- /*!40000 ALTER TABLE `images` ENABLE KEYS */;
+-- UNLOCK TABLES;
 
 --
 -- Table structure for table `review`
@@ -176,15 +176,14 @@ CREATE TABLE `users` (
   `birth_date` date NOT NULL,
   `phone` varchar(120) NOT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `type` enum('worker','client') NOT NULL,
-  `image_id` bigint unsigned DEFAULT NULL,
+  `type` enum('worker','client','user', 'admin') NOT NULL,
+  `image_url` varchar(255) NULL,
   `city_id` bigint unsigned DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `image_id` (`image_id`),
   KEY `city_id` (`city_id`),
-  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`),
   CONSTRAINT `users_ibfk_2` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -241,7 +240,6 @@ CREATE TABLE `workers` (
   `status` varchar(20) NOT NULL,
   `description` text,
   `category_id` bigint unsigned DEFAULT NULL,
-  `image_id` bigint unsigned DEFAULT NULL,
   `user_id` bigint unsigned DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
