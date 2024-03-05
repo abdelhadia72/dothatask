@@ -9,6 +9,7 @@ import ServiceDetails from '../pages/ServiceDetails';
 import { Profilepage } from '../pages/ProfilePage';
 import AddService from '../pages/AddService';
 import SettingProfile from '../pages/SettingProfile';
+import TypePage from '../Auth/TypePage';
 
 const Routers = () => {
   return (
@@ -22,6 +23,7 @@ const Routers = () => {
       <Route path="/forgotpassword" element={<ForgotPassword />} />
       <Route path="/profile" element={<Profilepage />} />
       <Route path="/profile-setting" element={<SettingProfile />} />
+      <Route path="/type-user" element={<TypePage />} />
     </Routes>
   );
 };
