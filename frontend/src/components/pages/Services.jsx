@@ -5,32 +5,36 @@ import { Card } from "@/components/Service/Card.jsx";
 
 export default function Services() {
     const [data, setData] = useState([]);
-    const [image, SetImage] = useState(null)
+    const [images, setImages] = useState({});
 
-    // Fetch and users
-    const getData = async () => {
+    const fetchData = async () => {
         try {
             const res = await axios.get("http://127.0.0.1:5000/api/v1/users");
+            const urls = {};
+            for (const user of res.data) {
+                const imageUrl = await getImages(user.id);
+                urls[user.id] = imageUrl;
+            }
             setData(res.data);
+            setImages(urls);
         } catch (err) {
             console.error(err);
         }
     };
 
-    // Fetch the images
-    const getImages = async (ID) => {
+    const getImages = async (userID) => {
         try {
-            const res = await axios.get(`http://127.0.0.1:5000/api/v1/worker_img/${ID}`)
-            SetImage(res.data.image_url)
+            const res = await axios.get(`http://127.0.0.1:5000/api/v1/worker_img/${userID}`);
+            return res.data.image_url;
         } catch (err) {
-            console.error(err)
+            console.error(err);
+            return null;
         }
-    }
+    };
 
     useEffect(() => {
-        getData();
+        fetchData();
     }, []);
-
 
     return (
         <div className='flex flex-col items-center justify-center'>
@@ -44,19 +48,19 @@ export default function Services() {
             </div>
             <SearchCategorie />
             <div className="w-[1840px] opacity-70 h-[0px] border border-neutral-600 md:my-[80px] my-[20px]"></div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-8'>
-                {data.map((e, idx) => (
-                    <Card construction="https://www.ibuildnew.com.au/blog/wp-content/uploads/2018/06/Builder-looking-up.png"
-                          worker="https://www.ibuildnew.com.au/blog/wp-content/uploads/2018/06/Builder-looking-up.png"
-                          name="Jhon Smith"
-                          discription="lorem lorem lorem lorem lorem lorem lorem lorem lorem "
-                          rate="4.1"
-                          amount_of_rate="45"
-                          category="builder"
-                          city="casablanca"
-                          price="500" />
-                ))}
-            </div>
+                <div className='flex items-center gap-2 justify-center flex-wrap'>
+                        {data.filter((e) => e.type === 'worker').map((user) => (
+                            <Card key={user.id}
+                                  construction={images[user.image_url]}
+                                  worker="https://www.ibuildnew.com.au/blog/wp-content/uploads/2018/06/Builder-looking-up.png"
+                                  name={`${user.first_name} ${user.last_name}`}
+                                  rate="4"
+                                  amount_of_rate="34"
+                                  category={user.category}
+                                  city="city"
+                                  price="500"/>
+                        ))}
+                </div>
         </div>
     );
 }
