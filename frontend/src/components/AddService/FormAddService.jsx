@@ -28,8 +28,8 @@ function FormAddService() {
     <div className='relative '>
         <div className='md:m-[120px] m-5 flex flex-col gap-8'>
             <div className="text-neutral-800 md:text-4xl text-md font-bold" >Add New Service</div>
-            <div className="text-neutral-800 md:text-2xl text-md font-medium ">Give your service a title</div>
-            <div className="text-do_gray_text text-lg font-normal ">Keep it short and simple this will help us match you to the right category</div>
+            <div className="text-neutral-800 md:text-2xl text-md font-medium">Give your service a title</div>
+            <div className="text-do_gray_text text-lg font-normal">Keep it short and simple this will help us match you to the right category</div>
             <form className='relative flex flex-col gap-8' onSubmit={handleSubmit(onSubmit)}>
                 <input className=" md:w-[580px] w-[280px] h-8 p-6 text-do_gray_text_input text-xl font-normal " placeholder='Exemple: create a professionalbusiness logo design' />
                 <div className="text-neutral-800 md:text-2xl text-md mt-5 font-medium">Category</div>
