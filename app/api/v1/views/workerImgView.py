@@ -3,10 +3,16 @@
 
 from flask import jsonify, request
 from api.v1.views import app_v1, SessionLocal, db_manager
-from models.worker_image import WorkerImg
+from models.worker_image import WorkerImage
 
 session = SessionLocal()
 
+@app_v1.route('/worker_img', methods=['GET'], strict_slashes=False)
+def get_worker_imgs():
+    """ get all worker_imgs """
+    data = db_manager.show(WorkerImg)
+    sdata = [el.to_dict() for el in data]
+    return jsonify(sdata)
 
 @app_v1.route('/worker_img', methods=['POST'], strict_slashes=False)
 def create_worker_img():
@@ -25,13 +31,6 @@ def create_worker_img():
         return jsonify({"error": "WorkerImg not found"}), 404
     return jsonify(get_worker_img.to_dict()), 201
 
-
-@app_v1.route('/worker_img', methods=['GET'], strict_slashes=False)
-def get_worker_imgs():
-    """ get all worker_imgs """
-    data = db_manager.show(WorkerImg)
-    sdata = [el.to_dict() for el in data]
-    return jsonify(sdata)
 
 
 @app_v1.route('/worker_img/<worker_img_id>', methods=['GET'], strict_slashes=False)
