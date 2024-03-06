@@ -1,7 +1,7 @@
 import {FaStar} from "react-icons/fa";
 import React from "react";
 
-export const Card = ({construction,worker,name,discription, rate, amount_of_rate, category, city, price}) => {
+export const Card = ({construction, worker, name, discription, rate, amount_of_rate, category, city, price}) => {
     return (
         <div className="w-[284px] h-[368px] flex-col justify-start items-start gap-1.5 my-5 inline-flex">
             <img className="w-[284px] h-[189px] rounded-[10px]" src={construction}/>
