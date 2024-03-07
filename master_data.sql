@@ -100,31 +100,6 @@ INSERT INTO `clients` VALUES (1,'Client 1 description','Active',1,'2024-02-26 12
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `images`
---
-
--- DROP TABLE IF EXISTS `images`;
--- /*!40101 SET @saved_cs_client     = @@character_set_client */;
--- /*!50503 SET character_set_client = utf8mb4 */;
--- CREATE TABLE `images` (
---   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
---   `image_url` varchar(255) NOT NULL,
---   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
---   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
---   PRIMARY KEY (`id`)
--- ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
--- /*!40101 SET character_set_client = @saved_cs_client */;
-
--- --
--- -- Dumping data for table `images`
--- --
-
--- LOCK TABLES `images` WRITE;
--- /*!40000 ALTER TABLE `images` DISABLE KEYS */;
--- INSERT INTO `images` VALUES (1,'https://example.com/image1.jpg','2024-02-26 12:13:12','2024-02-26 12:13:12'),(2,'https://example.com/image2.jpg','2024-02-26 12:13:12','2024-02-26 12:13:12'),(3,'https://example.com/image3.jpg','2024-02-26 12:13:12','2024-02-26 12:13:12');
--- /*!40000 ALTER TABLE `images` ENABLE KEYS */;
--- UNLOCK TABLES;
 
 --
 -- Table structure for table `review`
@@ -176,13 +151,12 @@ CREATE TABLE `users` (
   `birth_date` date NOT NULL,
   `phone` varchar(120) NOT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `type` enum('worker','client','user', 'admin') NOT NULL,
+  `type` enum('worker','client', 'user', 'admin') NOT NULL,
   `image_url` varchar(255) NULL,
   `city_id` bigint unsigned DEFAULT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `image_id` (`image_id`),
   KEY `city_id` (`city_id`),
   CONSTRAINT `users_ibfk_2` FOREIGN KEY (`city_id`) REFERENCES `cities` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -240,16 +214,14 @@ CREATE TABLE `workers` (
   `status` varchar(20) NOT NULL,
   `description` text,
   `category_id` bigint unsigned DEFAULT NULL,
-  `user_id` bigint unsigned DEFAULT NULL,
+  `user_id` bigint unsigned DEFAULT NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
-  KEY `image_id` (`image_id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `users_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `workers_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
-  CONSTRAINT `workers_ibfk_2` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -259,7 +231,7 @@ CREATE TABLE `workers` (
 
 LOCK TABLES `workers` WRITE;
 /*!40000 ALTER TABLE `workers` DISABLE KEYS */;
-INSERT INTO `workers` VALUES (1,'Worker 1','Active','Description for Worker 1',1,1,1,'2024-02-26 12:13:59','2024-02-26 22:39:58'),(2,'Worker 2','Inactive','Description for Worker 2',2,2,2,'2024-02-26 12:13:59','2024-02-26 22:39:58'),(3,'Worker 3','Active','Description for Worker 3',3,3,3,'2024-02-26 12:13:59','2024-02-26 22:39:58');
+INSERT INTO `workers` VALUES (1,'Worker 1','Active','Description for Worker 1',1,1,'2024-02-26 12:13:59','2024-02-26 22:39:58'),(2,'Worker 2','Inactive','Description for Worker 2',2,2,'2024-02-26 12:13:59','2024-02-26 22:39:58'),(3,'Worker 3','Active','Description for Worker 3',3,3,'2024-02-26 12:13:59','2024-02-26 22:39:58');
 /*!40000 ALTER TABLE `workers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
