@@ -10,6 +10,7 @@ import { Profilepage } from '../pages/ProfilePage';
 import AddService from '../pages/AddService';
 import SettingProfile from '../pages/SettingProfile';
 import TypePage from '../Auth/TypePage';
+import AboutUs from '../pages/AboutUs';
 
 const Routers = () => {
   return (
@@ -24,6 +25,7 @@ const Routers = () => {
       <Route path="/profile" element={<Profilepage />} />
       <Route path="/profile-setting" element={<SettingProfile />} />
       <Route path="/type-user" element={<TypePage />} />
+      <Route path="/about-us" element={<AboutUs />} />
     </Routes>
   );
 };
