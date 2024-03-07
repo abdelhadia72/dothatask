@@ -5,7 +5,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models.cities import City
 from models.categories import Category
-from models.images import Image
 from models.users import User
 from models.review import Review
 from models.worker_image import WorkerImage
