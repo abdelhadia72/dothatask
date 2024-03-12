@@ -5,7 +5,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models.cities import City
 from models.categories import Category
-from models.images import Image
 from models.users import User
 from models.review import Review
 from models.worker_image import WorkerImage
@@ -17,10 +16,10 @@ class DBManager:
     """ DBManager class """
     def __init__(self):
         """ constructor """
-        self.db_user = 'abdel'
-        self.db_password = 'Abdo2005'
+        self.db_user = 'root'
+        self.db_password = 'root'
         self.db_host = 'localhost'
-        self.db_name = 'DB_D'
+        self.db_name = 'DB_J'
         self.engine = create_engine(self.get_database_url())
         self.SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
 

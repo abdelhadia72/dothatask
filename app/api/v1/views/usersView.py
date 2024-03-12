@@ -7,7 +7,6 @@ from models.users import User
 
 session = SessionLocal()
 
-
 @app_v1.route('/users', methods=['POST'], strict_slashes=False)
 def create_user():
     """ create user into database"""
