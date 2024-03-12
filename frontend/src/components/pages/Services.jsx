@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import SearchCategorie from "../areas/SearchCategorie";
 import { Card } from "@/components/Service/Card.jsx";
 
