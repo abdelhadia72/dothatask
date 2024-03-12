@@ -1,8 +1,16 @@
+export const Card_Api = () => {
+    return (
+        <div>
+
+        </div>
+    );
+};
+
 import axios from "axios";
 import {useState} from "react";
 
 card_data = {
-    
+
 }
 export const UseFetch = ({url}) => {
     const [userData, setUserData] = useState({})
