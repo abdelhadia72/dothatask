@@ -94,10 +94,9 @@ export const Landing = () => {
               Get started <FaArrowRight />
             </Button>
           </div>
-          <div className="image-side grow">
+          <div className="image-side grow hidden md:block ">
             <img
               className="rotate-[35deg] relative -right-[40%]  top-[-20%] w-[70%] "
-              // className="relative -right-[30%]  "
               src="/public/commence.png"
               alt="commence.png"
             />
