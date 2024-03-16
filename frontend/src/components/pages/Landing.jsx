@@ -10,9 +10,9 @@ export const Landing = () => {
     <div className=" min-h-[100%] font-ubuntu bg-white">
       <div className="hero bg-[#00b05e] py-6 ">
         <div className="contaner mx-10 lg:ml-48 ">
-          <div className="nav">
+          {/* <div className="nav">
             <Logo color="white" />
-          </div>
+          </div> */}
           <div className="section py-12 flex items-center gap-2 text-white">
             <div className="text-side">
               <h1 className="text-xl md:text-3xl font-bold">
@@ -31,7 +31,7 @@ export const Landing = () => {
             <div className="image-side hidden lg:block">
               <img
                 className="object-cover w-[1500px] relative -right-[150px]"
-                src="/public/mockup.png"
+                src="https://raw.githubusercontent.com/abdelhadia72/dothatask/main/frontend/public/mockup.png"
                 alt="mockup.png"
               />
             </div>
@@ -97,7 +97,7 @@ export const Landing = () => {
           <div className="image-side grow hidden md:block ">
             <img
               className="rotate-[35deg] relative -right-[40%]  top-[-20%] w-[70%] "
-              src="/public/commence.png"
+              src="https://github.com/abdelhadia72/dothatask/blob/main/frontend/public/commence.png?raw=true"
               alt="commence.png"
             />
           </div>

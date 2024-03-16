@@ -3,8 +3,9 @@ import { Logo } from "../Logo";
 
 function Footer() {
   return (
-    <div div className=" container bg-[#00522C] py-12  font-ubuntu">
-      <div className="logo flex gap-2 text-white items-center">
+    <div div className=" bg-[#00522C] py-12  font-ubuntu">
+    <div className="container">
+    <div className="logo flex gap-2 text-white items-center">
         <Logo color="white" />
       </div>
       <div className="contact mt-6 text-white">
@@ -21,6 +22,7 @@ function Footer() {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }

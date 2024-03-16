@@ -19,9 +19,9 @@ export const App = () => {
 
   return (
     <div>
-      {/* <div className="z-[1] font-ubuntu ">
+      <div className="z-[1] font-ubuntu ">
         {!LOGGED ? <Navbar /> : <NavbarLogged />}
-      </div> */}
+      </div>
 
       <div className="flex flex-col justify-between">
         <Routers />
