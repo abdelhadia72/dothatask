@@ -2,7 +2,8 @@
 ## DoThatAsk
 
 ### Description
-Briefly describe the purpose and functionality of the project.
+
+DoThatAsk is a full-stack project designed to simplify the process of finding workers in your city for various tasks, eliminating the hassle and inconvenience traditionally associated with such searches. Similar to [Taskrabbit](https://taskrabbit.com), DoThatAsk aims to connect individuals seeking assistance with a wide range of services to skilled workers who can fulfill these tasks efficiently. The platform streamlines the process of locating workers, making it easier for users to find the right help for their needs. With a focus on user convenience and efficiency, DoThatAsk enhances the experience of both service seekers and providers, creating a seamless and effective marketplace for task completion.
 
 ### Features
 - List key features and functionalities of the project.
