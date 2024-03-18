@@ -24,15 +24,11 @@ if you want to visit the web site just click on the image !
 
 5. **Task Matching:** Implement a system to match tasks with suitable workers based on skills, availability, and location.
 
-6. **Messaging System:** Facilitate communication between users and workers through an in-platform messaging system.
+6. **Task Management:** Enable users to track the progress of their tasks, communicate updates, and mark tasks as completed.
 
-7. **Task Management:** Enable users to track the progress of their tasks, communicate updates, and mark tasks as completed.
+7. **Review and Rating:** Allow users to leave reviews and ratings for workers based on their performance on completed tasks.
 
-8. **Review and Rating:** Allow users to leave reviews and ratings for workers based on their performance on completed tasks.
-
-9. **Payment Processing:** Integrate a secure payment system for users to pay workers upon task completion.
-
-10. **Search and Filter:** Provide users with search and filter options to easily find specific tasks or workers based on criteria like location, price, and ratings
+8. **Search and Filter:** Provide users with search and filter options to easily find specific tasks or workers based on criteria like location, price, and ratings
 
 ### License
 
