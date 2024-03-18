@@ -5,6 +5,12 @@
 
 DoThatAsk is a full-stack project designed to simplify the process of finding workers in your city for various tasks, eliminating the hassle and inconvenience traditionally associated with such searches. Similar to [Taskrabbit](https://taskrabbit.com), DoThatAsk aims to connect individuals seeking assistance with a wide range of services to skilled workers who can fulfill these tasks efficiently. The platform streamlines the process of locating workers, making it easier for users to find the right help for their needs. With a focus on user convenience and efficiency, DoThatAsk enhances the experience of both service seekers and providers, creating a seamless and effective marketplace for task completion.
 
+### landing page :
+if you want to visit the web site just click on the image !
+<div align="center">
+  <a href="https://dothatask-zotv.vercel.app/"><img src="https://i.ibb.co/zH17vrn/Screenshot-from-2024-03-18-21-52-46.png" alt="Screenshot-from-2024-03-18-21-52-46" border="0"></a>
+</div>
+
 ### Features
 - ### Functionalities for "DoThatAsk" Website:
 
