@@ -40,17 +40,25 @@ For any questions, feedback, or inquiries regarding the "DoThatAsk" project, fee
 *Othman SALAHI*
 - **Email:** oothmansalahi.24@gmail.com
 - **Twitter:** [@Othmansalahi](https://twitter.com/Othmansalahi)
+  
 *Abdelhadi Abousaadah*
 - **Email:** example@gmail.com
 - **Twitter:** [@example](https://twitter.com/example)
+  
 *Abdo Zigo*
 - **Email:** example@gmail.com
 - **Twitter:** [@example](https://twitter.com/example)
 
 Don't hesitate to contact us with your thoughts, suggestions, or any queries you may have. Your input is valuable to us as we strive to improve and enhance the project.
 
-### Acknowledgements
-Give credit to any resources, libraries, or individuals that have helped in the development of the project.
 
 ### Support
-Include information on where users can find additional support or documentation.
+
+For additional support or documentation, users can refer to the following frameworks used in the "DoThatAsk" project:
+
+- **ReactJS Documentation:** [ReactJS Documentation](https://reactjs.org/docs/getting-started.html)
+- **Flask Documentation:** [Flask Documentation](https://flask.palletsprojects.com/en/2.1.x/)
+- **JavaScript Documentation:** [JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- **Python Documentation:** [Python Documentation](https://docs.python.org/3/)
+
+These resources provide detailed information and guides on the frameworks utilized in the project, offering assistance for users looking to understand and work with the technologies involved.
