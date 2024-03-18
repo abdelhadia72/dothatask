@@ -26,22 +26,28 @@ DoThatAsk is a full-stack project designed to simplify the process of finding wo
 
 9. **Payment Processing:** Integrate a secure payment system for users to pay workers upon task completion.
 
-10. **Search and Filter:** Provide users with search and filter options to easily find specific tasks or workers based on criteria like location, price, and ratings.
-
-### Installation
-Provide instructions on how to install and set up the project locally.
-
-### Usage
-Explain how to use the project, including any commands or steps needed.
-
-### Contributing
-Outline guidelines for contributing to the project, such as how to report issues or submit pull requests.
+10. **Search and Filter:** Provide users with search and filter options to easily find specific tasks or workers based on criteria like location, price, and ratings
 
 ### License
-Specify the license under which the project is distributed.
+
+The "DoThatAsk" project is distributed under the MIT license.
 
 ### Contact
-Provide contact information for users to reach out with questions or feedback.
+### Contact Information:
+
+For any questions, feedback, or inquiries regarding the "DoThatAsk" project, feel free to reach out using the following contact information:
+
+*Othman SALAHI*
+- **Email:** oothmansalahi.24@gmail.com
+- **Twitter:** [@Othmansalahi](https://twitter.com/Othmansalahi)
+*Abdelhadi Abousaadah*
+- **Email:** example@gmail.com
+- **Twitter:** [@example](https://twitter.com/example)
+*Abdo Zigo*
+- **Email:** example@gmail.com
+- **Twitter:** [@example](https://twitter.com/example)
+
+Don't hesitate to contact us with your thoughts, suggestions, or any queries you may have. Your input is valuable to us as we strive to improve and enhance the project.
 
 ### Acknowledgements
 Give credit to any resources, libraries, or individuals that have helped in the development of the project.
